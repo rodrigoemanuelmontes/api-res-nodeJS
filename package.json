@@ -1,0 +1,33 @@
+{
+  "name": "api-productos",
+  "version": "1.0.0",
+  "description": "API REST para gestión de productos con Node.js, Express, JWT y Firebase",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api-rest",
+    "jwt",
+    "firebase",
+    "productos"
+  ],
+  "author": "Rodrigo Montes",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^4.19.2",
+    "firebase": "^11.10.0",
+    "firebase-admin": "^13.4.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
