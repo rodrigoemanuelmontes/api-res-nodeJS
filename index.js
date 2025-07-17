@@ -1,8 +1,6 @@
 // index.js
 
-import dotenv from 'dotenv';
-dotenv.config(); // <-- Esto carga las variables primero
-
+import "dotenv/config";
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -33,5 +31,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log("Servidor corriendo en http://localhost:${PORT}");
 });

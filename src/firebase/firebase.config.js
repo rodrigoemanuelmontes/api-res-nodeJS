@@ -21,7 +21,7 @@ export const initializeFirebaseApp = () => {
   };
 
 
-  console.log('Firebase config values being used (during initializeFirebaseApp call):', firebaseConfig);
+
 
   appInstance = initializeApp(firebaseConfig);
   firestoreDb = getFirestore(appInstance);
