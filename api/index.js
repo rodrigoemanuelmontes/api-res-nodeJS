@@ -7,8 +7,8 @@ import serverless from 'serverless-http'; // Importa serverless-http
 import cors from 'cors';
 import bodyParser from 'body-parser';
 // Rutas corregidas para que funcionen desde la raíz del proyecto
-import productRoutes from './src/routes/products-routes.js';
-import authRoutes from './src/routes/auth.routes.js';
+import productRoutes from '../src/routes/products-routes.js';
+import authRoutes from '../src/routes/auth.routes.js';
 
 const app = express();
 
