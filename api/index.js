@@ -3,8 +3,8 @@ import express from 'express';
 import serverless from 'serverless-http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import productRoutes from './src/routes/products-routes.js';
-import authRoutes from './src/routes/auth.routes.js';
+import productRoutes from '../src/routes/products-routes.js';
+import authRoutes from '../src/routes/auth.routes.js';
 
 const app = express();
 
