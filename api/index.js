@@ -14,9 +14,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Rutas - sin prefijo /api porque Vercel ya lo maneja
-app.use('/products', productRoutes);
-app.use('/auth', authRoutes);
+// Rutas con prefijo /api
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
 
 // Ruta no encontrada (404)
 app.use((req, res, next) => {
