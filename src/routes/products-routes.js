@@ -11,7 +11,7 @@ import authenticate from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
 
-router.get('/',authenticate,  getAllProducts); 
+router.get('/',  getAllProducts); 
 router.get('/:id', authenticate, getProductById); 
 router.post('/create', authenticate, createProduct); 
 router.put('/:id', authenticate, updateProduct); 
