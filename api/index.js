@@ -1,14 +1,14 @@
-// index.js
+// api/index.js
 
-import "dotenv/config"; // Carga las variables de entorno
+import "dotenv/config"; 
 
 import express from 'express';
-import serverless from 'serverless-http'; // Importa serverless-http
+import serverless from 'serverless-http'; 
 import cors from 'cors';
 import bodyParser from 'body-parser';
-// Rutas corregidas para que funcionen desde la raíz del proyecto
-import productRoutes from './src/routes/products-routes.js';
-import authRoutes from './src/routes/auth.routes.js';
+
+import productRoutes from '../src/routes/products-routes.js'; 
+import authRoutes from '../src/routes/auth.routes.js';     
 
 const app = express();
 
@@ -34,10 +34,8 @@ app.use((err, req, res, next) => {
     res.status(status).json({ error: err.message || 'Error interno del servidor' });
 });
 
-// --- Lógica para desarrollo local ---
-// Esta parte solo se ejecutará si no estamos en un entorno serverless (Vercel)
-// Vercel no ejecuta app.listen, solo busca el 'handler' exportado.
-if (!process.env.VERCEL_ENV) { // Si VERCEL_ENV no está definido, asumimos desarrollo local
+
+if (!process.env.VERCEL_ENV) { 
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`Servidor corriendo en http://localhost:${PORT}`);
@@ -45,7 +43,5 @@ if (!process.env.VERCEL_ENV) { // Si VERCEL_ENV no está definido, asumimos desa
     });
 }
 
-// --- Exportación para Serverless ---
-// Esta línea DEBE estar en el nivel superior del módulo para que 'export' sea válido.
-// serverless(app) crea y devuelve el handler para Vercel.
+
 export const handler = serverless(app);
